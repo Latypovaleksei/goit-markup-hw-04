@@ -270,6 +270,9 @@ li {
 }
 
 .box-feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 270px;
   height: 120px;
   background-color: var(--btn-color);
@@ -280,7 +283,6 @@ li {
 .img-icon {
   width: 70px;
   height: 70px;
-  margin: 25px 100px;
 }
 
 .box-feature:not(:last-child) {
@@ -521,8 +523,6 @@ li {
   max-height: 402px;
   width: 370px;
   border: 1px solid var(--border-color);
-  box-shadow: 0px 1px 1px var(--color-shadow1), 0px 4px 4px var(--color-shadow6),
-    1px 4px 6px var(--color-shadow7);
   display: flex;
   flex-direction: column;
   margin-left: 30px;
