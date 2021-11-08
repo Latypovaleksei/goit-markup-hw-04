@@ -15,6 +15,7 @@
     0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
   --works-border: 1px solid #eeeeee;
   --works-item-gap: 30px;
+  --hero-linear-gradient: to right, rgba(47, 48, 58, 0.4),rgba(47, 48, 58, 0.4);
 }
 
 a {
@@ -138,6 +139,7 @@ header {
 .contact-list {
   display: flex;
   flex-direction: row;
+  align-items: baseline;
   margin-left: auto;
 }
 
@@ -154,15 +156,41 @@ header {
 }
 
 .contact-item a:hover,
-.contact-item a:focus {
+.contact-item a:focus,
+.contact-item a:hover .icon,
+.contact-item a:focus .icon {
   color: var(--highlighting-color);
+  fill: var(--highlighting-color);
 }
+
+.icon {
+  fill: var(--secondary-text-color);
+}
+
+.envelope {
+  width: 16px;
+  height: 12px;
+}
+
+.smartphone {
+  width: 10px;
+  height: 16px;
+}
+
+.smartphone, 
+.envelope {
+  margin-right: 10px;
+}
+
 
 /* Основная страница */
 /* Шапка */
 .section.hero {
   background-color: var(--secondary-background-color);
   display: block;
+  background-image: linear-gradient(var(--hero-linear-gradient)), url('../images/hero_img.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .section.hero {
@@ -193,7 +221,8 @@ header {
   color: var(--main-color);
   box-shadow: var(--shadow-bt-hero);
   border-radius: 4px;
-
+  border: none;
+  
   width: 200px;
   height: 50px;
 }
