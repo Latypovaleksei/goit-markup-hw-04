@@ -8,24 +8,21 @@
   --third-background-color: rgba(245, 244, 250, 1);
   --bt-hover: rgba(24, 140, 232, 1);
   --header-border: 1px solid rgba(236, 236, 236, 1);
-  --box-shadow-fotocard: 0px 1px 3px rgba(0, 0, 0, 0.12),
-    0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  --box-shadow-fotocard: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
   --shadow-bt-hero: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  --shadow-bt-filter: 0px 3px 1px rgba(0, 0, 0, 0.1),
-    0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+  --shadow-bt-filter: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
   --works-border: 1px solid #eeeeee;
   --works-item-gap: 30px;
-  --hero-linear-gradient: to right, rgba(47, 48, 58, 0.4),rgba(47, 48, 58, 0.4);
+  --hero-linear-gradient: to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4);
   --icon-color: rgba(175, 177, 184, 1);
   --footer-social-link-bg: rgba(255, 255, 255, 0.1);
-
-
 }
 
 a {
   text-decoration: none;
 }
-
 
 ul,
 h1,
@@ -46,7 +43,7 @@ img {
 
 body {
   background-color: var(--main-color);
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
 }
 
@@ -80,7 +77,8 @@ body {
 
 /* Верхняя линия */
 header a {
-  display: block;
+  display: flex;
+  align-items: center;
   padding-top: 32px;
   padding-bottom: 32px;
 }
@@ -98,7 +96,7 @@ header {
 
 /* блок Логотип */
 .logo {
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
@@ -159,6 +157,9 @@ header {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--secondary-text-color);
+
+  /* display: flex;
+  align-items: center; */
 }
 
 .contact-item a:hover,
@@ -183,26 +184,26 @@ header {
   height: 16px;
 }
 
-.smartphone, 
+.smartphone,
 .envelope {
   margin-right: 10px;
 }
 
-
 /* Основная страница */
 /* Шапка */
 .section.hero {
-  background-color: var(--secondary-background-color);
   display: block;
-  background-image: linear-gradient(var(--hero-linear-gradient)), url('../images/hero_img.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.section.hero {
   padding-top: 200px;
   padding-bottom: 200px;
   text-align: center;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+
+  background-color: var(--secondary-background-color);
+  background-image: linear-gradient(var(--hero-linear-gradient)), url('../images/hero_img.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .hero-title {
@@ -228,7 +229,7 @@ header {
   box-shadow: var(--shadow-bt-hero);
   border-radius: 4px;
   border: none;
-  
+
   width: 200px;
   height: 50px;
 }
@@ -257,11 +258,14 @@ header {
 }
 
 .item-box {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+
   background-color: var(--third-background-color);
   border-radius: 4px;
 
-  padding: 25px 100px;
   margin-bottom: 30px;
 }
 
@@ -369,16 +373,18 @@ section.team {
 }
 
 .social-link {
-  display: block;
-   width: 44px;
-  height: 44px;  
-  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  /* padding: 12px; */
   border-radius: 50%;
 }
 
-.social-link:hover, 
+.social-link:hover,
 .social-link:focus,
-.social-link:hover .icon, 
+.social-link:hover .icon,
 .social-link:focus .icon {
   background-color: var(--highlighting-color);
   fill: var(--main-color);
@@ -400,14 +406,15 @@ section.team {
 }
 
 .partners-link {
-  display: block;
-  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   border: 1px solid var(--icon-color);
   border-radius: 4px;
   width: 170px;
   height: 92px;
-  
-} 
+}
 
 .partners-link .icon {
   width: 106px;
@@ -415,12 +422,12 @@ section.team {
   fill: var(--icon-color);
 }
 
-.partners-link:hover, 
+.partners-link:hover,
 .partners-link:focus {
   border: 1px solid var(--highlighting-color);
 }
 
-.partners-link:hover .icon, 
+.partners-link:hover .icon,
 .partners-link:focus .icon {
   fill: var(--highlighting-color);
 }
@@ -479,8 +486,10 @@ section.team {
   display: block;
 }
 
-.works-link:hover {
-  box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.16), 0px 4px 4px 0px rgba(0, 0, 0, 0.06),0px 1px 1px 0px rgba(0, 0, 0, 0.12);
+.works-link:hover,
+.works-link:focus {
+  box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.16), 0px 4px 4px 0px rgba(0, 0, 0, 0.06),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.12);
 }
 
 .specification {
@@ -515,22 +524,20 @@ section.team {
   padding-bottom: 60px;
 }
 
-.footer a {
-  display: inline-block;
-}
-
 .footer .contаiner {
   display: flex;
   align-items: baseline;
 }
 
 .logo-n-address {
+  display: flex;
+  flex-direction: column;
   margin-right: 70px;
 }
 
 /* блок Логотип */
 .footer-logo {
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
@@ -591,9 +598,9 @@ section.team {
   background-color: var(--footer-social-link-bg);
 }
 
-.join-box .social-link:hover, 
+.join-box .social-link:hover,
 .join-box .social-link:focus,
-.join-box .social-link:hover .icon, 
+.join-box .social-link:hover .icon,
 .join-box .social-link:focus .icon {
   background-color: var(--highlighting-color);
   fill: var(--main-color);
